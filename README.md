@@ -1,12 +1,12 @@
 # Media Database
  
-### Introduction
+## Introduction
  
 Have you ever felt frustrated that Goodreads lacks several features on Letterboxd, which lacks features that are on Goodreads? Or that you can't view a database of all of the media you’ve experienced, such as books and movies, in the same site/application? No longer will this be a problem!
  
 We are going to create a graphical user interface for displaying and interacting with a database of media the user curates. The user will be able to sort through the media they have experienced, in any medium, because the interface will allow them to tag different attributes, including personal score, creator, genre, etc.
  
-### Input
+## Input
  
 The user will be prompted to enter information in the GUI, which will then create a CSV/SQLite database specifically for the information they typed in.
  
@@ -21,7 +21,7 @@ If the user selects the “visual” button, then they will again be prompted wi
 The created CSV/SQLite file will be sorted according to the user’s preference. 
  
  
-### Display
+## Display
  
 The application will open with an area to choose supermedium (verbal or visual), a place to view all media sorted, a place to choose database folder, a place to view favorites, and a diary section.
  
