@@ -35,6 +35,7 @@ class PanelThree(wx.Panel):
     newMedium8=None
     newMedium9=None
     newMedium10=None
+    resetter=None
     buttonArr=[]
     counter=0
     def __init__(self, parent):
@@ -64,6 +65,8 @@ class PanelThree(wx.Panel):
         PanelThree.newMedium9.Bind(wx.EVT_BUTTON, self.GetMediumResponse)
         PanelThree.newMedium10 = wx.Button(self, label="+new",size=(100,30))
         PanelThree.newMedium10.Bind(wx.EVT_BUTTON, self.GetMediumResponse)
+        PanelThree.resetter = wx.Button(self, label="Reset",size=(100,30))
+        PanelThree.resetter.Bind(wx.EVT_BUTTON, self.Reset)
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         Sizer.Add(PanelThree.newMedium1, 0, wx.ALIGN_CENTER|wx.ALL, 15)
@@ -76,7 +79,8 @@ class PanelThree(wx.Panel):
         Sizer.Add(PanelThree.newMedium8, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         Sizer.Add(PanelThree.newMedium9, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         Sizer.Add(PanelThree.newMedium10, 0, wx.ALIGN_CENTER|wx.ALL, 15)
- 
+        Sizer.Add(PanelThree.resetter, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+
         self.SetSizerAndFit(Sizer)
     def GetMediumResponse(self, event=None):
         dlg = wx.TextEntryDialog(self, 'Enter the name of the medium you want to add:',"Medium Inputter","", 
@@ -93,8 +97,12 @@ class PanelThree(wx.Panel):
         PanelThree.newMedium1.Bind(wx.EVT_BUTTON, self.MediumOpener())
         if PanelThree.counter<9:
             PanelThree.counter+=1
+        
     def MediumOpener(self, event=None):
         #make panel switch to the specific medium panel
+        pass
+    def Reset(self, event=None):
+        #open new window to choose which button to reset
         pass
 class MyForm(wx.Frame):
 
