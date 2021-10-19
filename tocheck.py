@@ -144,8 +144,11 @@ class PanelFavorites(wx.Panel):
         font.PointSize += 5
         st.SetFont(font)
 
+        self.btn = wx.Button(self, -1, "Go back home")
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
 
         
         self.SetSizerAndFit(Sizer)
@@ -157,8 +160,11 @@ class PanelDiary(wx.Panel):
         font.PointSize += 5
         st.SetFont(font)
 
+        self.btn = wx.Button(self, -1, "Go back home")
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
 class PanelSort(wx.Panel):
@@ -170,8 +176,11 @@ class PanelSort(wx.Panel):
         font.PointSize += 5
         st.SetFont(font)
 
+        self.btn = wx.Button(self, -1, "Go back home")
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
 class PanelVerbal1(wx.Panel):
@@ -436,6 +445,10 @@ class MyForm(wx.Frame):
         self.panel_five.Hide()
         self.panel_six.Hide()
 
+        self.panel_four.btn.Bind(wx.EVT_BUTTON, self.Home)
+        self.panel_five.btn.Bind(wx.EVT_BUTTON, self.Home)
+        self.panel_six.btn.Bind(wx.EVT_BUTTON, self.Home)
+
         self.sizer = wx.BoxSizer(wx.VERTICAL)
         self.sizer.Add(self.panel_one, 1, wx.EXPAND)
         self.sizer.Add(self.panel_two, 1, wx.EXPAND)
@@ -533,6 +546,8 @@ class MyForm(wx.Frame):
         self.panel_five.Hide()
         self.panel_six.Show()
         self.Layout()
+    def MediumButtonBinding(self, btn, num, v, event=None):
+        pass
 
 # Run the program
 if __name__ == "__main__":
