@@ -7,9 +7,6 @@ class PanelOne(wx.Panel):
         wx.Panel.__init__(self, parent=parent)
         st=wx.StaticText(self, label="Home Screen")
         st2=wx.StaticText(self, label="Choose super-medium in Medium tab in Menu")
-        favorites = wx.Button(self, label="Favorites",size=(100,30))
-        diary = wx.Button(self, label="Diary",size=(100,30))
-        sort = wx.Button(self, label="Sort through all media",size=(140,30))
         font = st.GetFont()
         font.PointSize += 5
         st.SetFont(font)
@@ -20,9 +17,6 @@ class PanelOne(wx.Panel):
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         Sizer.Add(st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
-        Sizer.Add(favorites, 0, wx.ALIGN_CENTER|wx.ALL, 15)
-        Sizer.Add(diary, 0, wx.ALIGN_CENTER|wx.ALL, 15)
-        Sizer.Add(sort, 0, wx.ALIGN_CENTER|wx.ALL, 15)
  
         self.SetSizerAndFit(Sizer)
 class PanelTwo(wx.Panel):
@@ -142,7 +136,289 @@ class GetData1(wx.Dialog):
         self.result_name = self.name.GetValue()
         self.result_surname = self.surname.GetValue()
         self.Destroy()
+class PanelFavorites(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="Favorites")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
 
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+
+        
+        self.SetSizerAndFit(Sizer)
+class PanelDiary(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="Diary")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelSort(wx.Panel):
+    
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="Sort")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal1(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal1")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.btn = wx.Button(self, -1, "Go back to Verbal mediums selection", (345, 100))
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVerbal1.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal2(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal2")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.btn = wx.Button(self, -1, "Change panel", (345, 100))
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal3(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal3")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal4(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal4")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal5(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal5")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal6(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal6")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal7(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal7")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal8(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal8")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal9(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal9")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVerbal10(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVerbal10")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisual1(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual1")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisual2(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual2")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisuall3(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual3")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisuall4(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual4")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisuall5(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual5")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisuall6(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual6")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisuall7(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual7")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisuall8(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual8")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisuall9(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual9")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class PanelVisuall10(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual10")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
 class MyForm(wx.Frame):
 
     def __init__(self, *args, **kwargs):
@@ -151,18 +427,28 @@ class MyForm(wx.Frame):
         self.panel_one = PanelOne(self)
         self.panel_two = PanelTwo(self)
         self.panel_three = PanelThree(self)
+        self.panel_four = PanelFavorites(self)
+        self.panel_five = PanelDiary(self)
+        self.panel_six = PanelSort(self)
         self.panel_two.Hide()
         self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
 
         self.sizer = wx.BoxSizer(wx.VERTICAL)
         self.sizer.Add(self.panel_one, 1, wx.EXPAND)
         self.sizer.Add(self.panel_two, 1, wx.EXPAND)
         self.sizer.Add(self.panel_three, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_four, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_five, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_six, 1, wx.EXPAND)
         self.SetSizer(self.sizer)
 
         menubar = wx.MenuBar()
         fileMenu = wx.Menu()
         mediumMenu = wx.Menu()
+        panelsMenu = wx.Menu()
         switch_panels_menu_home = mediumMenu.Append(wx.ID_ANY, 
                                                   "Home Screen", 
                                                   "Some text")
@@ -172,14 +458,30 @@ class MyForm(wx.Frame):
         switch_panels_menu_visual = mediumMenu.Append(wx.ID_ANY, 
                                                   "Visual Mediums", 
                                                   "Some text")
+        switch_panels_panels_favorites = panelsMenu.Append(wx.ID_ANY, 
+                                                  "Favorites", 
+                                                  "Some text")
+        switch_panels_panels_diary = panelsMenu.Append(wx.ID_ANY, 
+                                                  "Diary", 
+                                                  "Some text")
+        switch_panels_panels_sort = panelsMenu.Append(wx.ID_ANY, 
+                                                  "Sort", 
+                                                  "Some text")
         self.Bind(wx.EVT_MENU, self.Home, 
                   switch_panels_menu_home)
         self.Bind(wx.EVT_MENU, self.Verbal, 
                   switch_panels_menu_verbal)
         self.Bind(wx.EVT_MENU, self.Visual, 
                   switch_panels_menu_visual)
+        self.Bind(wx.EVT_MENU, self.Favorites, 
+                  switch_panels_panels_favorites)
+        self.Bind(wx.EVT_MENU, self.Diary, 
+                  switch_panels_panels_diary)
+        self.Bind(wx.EVT_MENU, self.Sort, 
+                  switch_panels_panels_sort)
         menubar.Append(fileMenu, '&File')
         menubar.Append(mediumMenu, '&Medium')
+        menubar.Append(panelsMenu, '&Panels')
         self.SetMenuBar(menubar)
 
     #----------------------------------------------------------------------
@@ -187,16 +489,49 @@ class MyForm(wx.Frame):
         self.panel_one.Show()
         self.panel_two.Hide()
         self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
         self.Layout()
     def Verbal(self, event):
         self.panel_one.Hide()
         self.panel_two.Show()
         self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
         self.Layout()
     def Visual(self, event):
         self.panel_one.Hide()
         self.panel_two.Hide()
         self.panel_three.Show()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.Layout()
+    def Favorites(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Show()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.Layout()
+    def Diary(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Show()
+        self.panel_six.Hide()
+        self.Layout()
+    def Sort(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Show()
         self.Layout()
 
 # Run the program
