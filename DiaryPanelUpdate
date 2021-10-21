@@ -130,6 +130,29 @@ class GetData2(wx.Dialog):
         self.result_name = self.name.GetValue()
         self.result_surname = self.surname.GetValue()
         self.Destroy()
+
+class GetDataFav(wx.Dialog):
+    def __init__(self, parent):
+        wx.Dialog.__init__(self, parent, wx.ID_ANY, "Add favorite", size= (800,220))
+        self.panel = wx.Panel(self,wx.ID_ANY)
+
+        self.lblname = wx.StaticText(self.panel, label="Enter Title", pos=(15,60))
+        self.name = wx.TextCtrl(self.panel, value="", pos=(148,58), size=(500,-1))
+        self.saveButton =wx.Button(self.panel, label="Save", pos=(110,120))
+        self.closeButton =wx.Button(self.panel, label="Cancel", pos=(210,120))
+        self.saveButton.Bind(wx.EVT_BUTTON, self.SaveConnString)
+        self.closeButton.Bind(wx.EVT_BUTTON, self.OnQuit)
+        self.Bind(wx.EVT_CLOSE, self.OnQuit)
+        self.Show()
+
+    def OnQuit(self, event):
+        self.result_name = None
+        self.Destroy()
+
+    def SaveConnString(self, event):
+        self.result_name = self.name.GetValue()
+        
+        self.Destroy()
 class PanelFavorites(wx.Panel):
     def __init__(self, *args, **kwargs):
         wx.Frame.__init__(self, *args, **kwargs)
@@ -139,13 +162,30 @@ class PanelFavorites(wx.Panel):
         st.SetFont(font)
 
         self.btn = wx.Button(self, -1, "Go back home")
+        self.btnfav = wx.Button(self, -1, "Add favorite")
+        self.btnfav.Bind(wx.EVT_BUTTON, self.OnButton)
+        self.log = wx.TextCtrl(self, wx.ID_ANY, size=(400,300),style = wx.TE_MULTILINE|wx.TE_READONLY|wx.VSCROLL)
+        
 
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         Sizer.Add(self.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
-
-        
+        Sizer.Add(self.btnfav, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.log, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         self.SetSizerAndFit(Sizer)
+        
+    def OnButton(self,event):
+        dlg = GetDataFav(parent = self) 
+        dlg.ShowModal()
+    
+        if dlg.result_name:
+            self.log.AppendText("Add favorite: "+dlg.result_name+"\n")
+            
+            
+        else:
+            self.log.AppendText("No Input found\n")
+            
+        
 
 class MyFrame(wx.Frame):
     def __init__(self, parent):
@@ -180,14 +220,15 @@ class PanelDiary(wx.Panel):
         self.btn = wx.Button(self, -1, "Go back home")
         self.entry = wx.Button(self, label="Add entry")
         self.entry.Bind(wx.EVT_BUTTON, self.OnButton)
+        self.log = wx.TextCtrl(self, wx.ID_ANY, size=(400,300),style = wx.TE_MULTILINE|wx.TE_READONLY|wx.VSCROLL)
 
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         Sizer.Add(self.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         Sizer.Add(self.entry, 0, wx.ALIGN_CENTER|wx.ALL, 15)
-        self.log = wx.TextCtrl(self, wx.ID_ANY, size=(400,300),style = wx.TE_MULTILINE|wx.TE_READONLY|wx.VSCROLL)
-
+        Sizer.Add(self.log, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         self.SetSizerAndFit(Sizer)
+
     def OnButton(self,event):
         dlg = GetData2(parent = self) 
         dlg.ShowModal()
