@@ -1,0 +1,17 @@
+#csvtest
+
+import csv
+with open('file.csv', 'w') as f:
+    w = csv.writer(f, quoting=csv.QUOTE_ALL) 
+    cnt=0
+    while (cnt<1):
+        why = input("why? ")
+        date = input("date: ")
+        story = input("story: ")
+        cnt = cnt + 1
+        w.writerow([why, date, story])
+        spamreader = csv.reader('file.csv', delimiter=' ', quotechar='|')
+        for row in spamreader:
+            print(', '.join(row))
+        uiut[]
+   
