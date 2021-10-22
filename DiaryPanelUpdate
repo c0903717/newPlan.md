@@ -179,7 +179,7 @@ class PanelFavorites(wx.Panel):
         dlg.ShowModal()
     
         if dlg.result_name:
-            self.log.AppendText("Add favorite: "+dlg.result_name+"\n")
+            self.log.AppendText(dlg.result_name+"\n")
             
             
         else:
