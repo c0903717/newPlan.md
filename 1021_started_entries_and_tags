@@ -1,1 +1,1671 @@
+import wx
+import wx.grid as gridlib
+import random
 
+class PanelOne(wx.Panel):
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent=parent)
+        st=wx.StaticText(self, label="Home Screen")
+        st2=wx.StaticText(self, label="Choose super-medium in Medium tab in Menu")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+        font = st2.GetFont()
+        font.PointSize += 3
+        st2.SetFont(font)
+        #self.SetBackgroundColour((0x88,0xcc,0xff))
+        self.SetBackgroundColour((0xff,0xcc,0x88))
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+ 
+        self.SetSizerAndFit(Sizer)
+class PanelTwo(wx.Panel):
+    newMedium1=None
+    newMedium2=None
+    newMedium3=None
+    newMedium4=None
+    newMedium5=None
+    newMedium6=None
+    newMedium7=None
+    newMedium8=None
+    newMedium9=None
+    newMedium10=None
+    resetter=None
+    txt=""
+    buttonArr=[]
+    counter=0
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent=parent)
+        st=wx.StaticText(self, label="Verbal Mediums\n")
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+        PanelTwo.newMedium1 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium2 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium3 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium4 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium5 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium6 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium7 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium8 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium9 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.newMedium10 = wx.Button(self, label="+new",size=(100,30))
+        PanelTwo.resetter = wx.Button(self, label="Reset",size=(100,30))
+        PanelTwo.resetter.Bind(wx.EVT_BUTTON, self.Reset)
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium1, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium3, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium4, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium5, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium6, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium7, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium8, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium9, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.newMedium10, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelTwo.resetter, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+
+        self.SetSizerAndFit(Sizer)
+    def Reset(self, event=None):
+        #open new window to choose which button to reset
+        pass
+class PanelThree(wx.Panel):
+    newMedium1=None
+    newMedium2=None
+    newMedium3=None
+    newMedium4=None
+    newMedium5=None
+    newMedium6=None
+    newMedium7=None
+    newMedium8=None
+    newMedium9=None
+    newMedium10=None
+    resetter=None
+    txt=""
+    buttonArr=[]
+    counter=0
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent=parent)
+        st=wx.StaticText(self, label="Visual Mediums\n")
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+        PanelThree.newMedium1 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium2 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium3 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium4 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium5 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium6 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium7 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium8 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium9 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.newMedium10 = wx.Button(self, label="+new",size=(100,30))
+        PanelThree.resetter = wx.Button(self, label="Reset",size=(100,30))
+        PanelThree.resetter.Bind(wx.EVT_BUTTON, self.Reset)
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium1, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium3, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium4, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium5, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium6, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium7, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium8, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium9, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.newMedium10, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelThree.resetter, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+
+        self.SetSizerAndFit(Sizer)
+    def Reset(self, event=None):
+        #open new window to choose which button to reset
+        pass
+
+class GetData1(wx.Dialog):
+    def __init__(self, parent):
+        wx.Dialog.__init__(self, parent, wx.ID_ANY, "Medium Inputter", size= (800,220))
+        self.panel = wx.Panel(self,wx.ID_ANY)
+
+        self.lblname = wx.StaticText(self.panel, label="Name of medium:", pos=(20,20))
+        self.name = wx.TextCtrl(self.panel, value="", pos=(120,18), size=(500,-1))
+        self.lblsur = wx.StaticText(self.panel, label="Description of medium:", pos=(20,60))
+        self.surname = wx.TextCtrl(self.panel, value="", pos=(148,58), size=(500,-1))
+        self.saveButton =wx.Button(self.panel, label="Save", pos=(110,120))
+        self.closeButton =wx.Button(self.panel, label="Cancel", pos=(210,120))
+        self.saveButton.Bind(wx.EVT_BUTTON, self.SaveConnString)
+        self.closeButton.Bind(wx.EVT_BUTTON, self.OnQuit)
+        self.Bind(wx.EVT_CLOSE, self.OnQuit)
+        self.Show()
+
+    def OnQuit(self, event):
+        self.result_name = None
+        self.Destroy()
+
+    def SaveConnString(self, event):
+        self.result_name = self.name.GetValue()
+        self.result_surname = self.surname.GetValue()
+        self.Destroy()
+class GetData2(wx.Dialog):
+    def __init__(self, parent):
+        wx.Dialog.__init__(self, parent, wx.ID_ANY, "Diary Inputter", size= (800,220))
+        self.panel = wx.Panel(self,wx.ID_ANY)
+
+        self.lblname = wx.StaticText(self.panel, label="Date of entry:", pos=(20,20))
+        self.name = wx.TextCtrl(self.panel, value="", pos=(120,18), size=(500,-1))
+        self.lblsur = wx.StaticText(self.panel, label="Message", pos=(20,60))
+        self.surname = wx.TextCtrl(self.panel, value="", pos=(148,58), size=(500,-1))
+        self.saveButton =wx.Button(self.panel, label="Save", pos=(110,120))
+        self.closeButton =wx.Button(self.panel, label="Cancel", pos=(210,120))
+        self.saveButton.Bind(wx.EVT_BUTTON, self.SaveConnString)
+        self.closeButton.Bind(wx.EVT_BUTTON, self.OnQuit)
+        self.Bind(wx.EVT_CLOSE, self.OnQuit)
+        self.Show()
+
+    def OnQuit(self, event):
+        self.result_name = None
+        self.Destroy()
+
+    def SaveConnString(self, event):
+        self.result_name = self.name.GetValue()
+        self.result_surname = self.surname.GetValue()
+        self.Destroy()
+class PanelFavorites(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="Favorites")
+        self.SetBackgroundColour((0xff,0xaa,0x99))
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.btn = wx.Button(self, -1, "Go back home")
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+
+        
+        self.SetSizerAndFit(Sizer)
+class MyFrame(wx.Frame):
+    def __init__(self, parent):
+        wx.Frame.__init__(self, parent, -1, "Diary Text",size=(500,400))
+        self.panel = wx.Panel(self)
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        self.log = wx.TextCtrl(self.panel, wx.ID_ANY, size=(400,300),style = wx.TE_MULTILINE|wx.TE_READONLY|wx.VSCROLL)
+        self.button = wx.Button(self.panel, label="Click me")
+        sizer.Add(self.log, 0, wx.EXPAND | wx.ALL, 10)
+        sizer.Add(self.button, 0, wx.EXPAND | wx.ALL, 10)
+        self.panel.SetSizer(sizer)
+        self.Bind(wx.EVT_BUTTON, self.OnButton)
+
+    def OnButton(self,event):
+        dlg = GetData(parent = self.panel) 
+        dlg.ShowModal()
+        if dlg.result_name:
+            self.log.AppendText("Name: "+dlg.result_name+"\n")
+            self.log.AppendText("Surname: "+dlg.result_surname+"\n")
+        dlg.Destroy()
+class PanelDiary(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="Diary")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+        self.SetBackgroundColour((0xff,0xaa,0x99))
+
+        self.btn = wx.Button(self, -1, "Go back home")
+        self.entry = wx.Button(self, label="Add entry")
+        self.entry.Bind(wx.EVT_BUTTON, self.OnButton)
+        self.log = wx.TextCtrl(self, wx.ID_ANY, size=(400,300),style = wx.TE_MULTILINE|wx.TE_READONLY|wx.VSCROLL)
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.entry, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.log, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+
+        self.SetSizerAndFit(Sizer)
+    def OnButton(self,event):
+        dlg = GetData2(parent = self) 
+        dlg.ShowModal()
+
+        if dlg.result_name:
+            self.log.AppendText("Date of entry: "+dlg.result_name+"\n")
+            self.log.AppendText("Message: "+dlg.result_surname+"\n")
+class PanelSort(wx.Panel):
+    
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="Sort")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.SetBackgroundColour((0xff,0xaa,0x99))
+        self.btn = wx.Button(self, -1, "Go back home")
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(self.btn, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+class Verbal1(wx.Dialog):
+    def __init__(self, parent):
+        wx.Dialog.__init__(self, parent, wx.ID_ANY, "Entry Inputter (Verbal)", size= (800,300))
+        self.panel = wx.Panel(self,wx.ID_ANY)
+        self.SetBackgroundColour((0xff,0xcc,0x88))
+
+        self.lblname = wx.StaticText(self.panel, label="Name of entry:", pos=(20,20))
+        self.name = wx.TextCtrl(self.panel, value="", pos=(120,18), size=(500,-1))
+        self.lbltag2 = wx.StaticText(self.panel, label="Tag 2:", pos=(20,60))
+        self.tag2 = wx.TextCtrl(self.panel, value="", pos=(120,58), size=(500,-1))
+        self.lbltag3 = wx.StaticText(self.panel, label="Tag 3:", pos=(20,100))
+        self.tag3 = wx.TextCtrl(self.panel, value="", pos=(120,98), size=(500,-1))
+        self.lbltag4 = wx.StaticText(self.panel, label="Tag 4:", pos=(20,140))
+        self.tag4 = wx.TextCtrl(self.panel, value="", pos=(120,138), size=(500,-1))
+        self.lbltag5 = wx.StaticText(self.panel, label="Tag 5:", pos=(20,180))
+        self.tag5 = wx.TextCtrl(self.panel, value="", pos=(120,178), size=(500,-1))
+        self.saveButton =wx.Button(self.panel, label="Save", pos=(110,210))
+        self.closeButton =wx.Button(self.panel, label="Cancel", pos=(210,210))
+        self.saveButton.Bind(wx.EVT_BUTTON, self.SaveConnString)
+        self.closeButton.Bind(wx.EVT_BUTTON, self.OnQuit)
+        self.Bind(wx.EVT_CLOSE, self.OnQuit)
+        self.Show()
+
+    def OnQuit(self, event):
+        self.name = None
+        self.Destroy()
+
+    def SaveConnString(self, event):
+        self.name = self.name.GetValue()
+        self.tag2 = self.tag2.GetValue()
+        self.tag3 = self.tag3.GetValue()
+        self.tag4 = self.tag4.GetValue()
+        self.tag5 = self.tag5.GetValue()
+        self.Destroy()
+class PanelVerbal1(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal1.st=wx.StaticText(self, label="PanelVerbal1")
+        font = PanelVerbal1.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal1.st.SetFont(font)
+        self.lbl1=""
+        self.lbl2=""
+        self.lbl3=""
+        self.lbl4=""
+        self.lbl5=""
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        self.entry = wx.Button(self, label="Add entry")
+        self.entry.Bind(wx.EVT_BUTTON, self.OnButton)
+
+        self.tab_num = 1
+
+        self.notebook = wx.Notebook(self)
+        #tabOne = TabPanel(self.notebook)
+        #self.notebook.AddPage(tabOne, "Tab 1")
+
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(PanelVerbal1.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        sizer.Add(self.entry, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        sizer.Add(self.notebook, 0, wx.ALL|wx.EXPAND, 15)
+
+        self.SetSizer(sizer)
+        self.Layout()
+
+        self.Show()
+    #----------------------------------------------------------------------
+    def addPage(self, event):
+        new_tab = TabPanel(self.notebook)
+        self.notebook.AddPage(new_tab, "Tab %s" % self.tab_num)
+        self.tab_num += 1
+        st1=wx.StaticText(self, label="PanelVerbal1")
+        st2=wx.StaticText(self, label="PanelVerbal1")
+        st3=wx.StaticText(self, label="PanelVerbal1")
+        st4=wx.StaticText(self, label="PanelVerbal1")
+        st5=wx.StaticText(self, label="PanelVerbal1")
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal1.st.SetLabelText(txt)
+    def OnButton(self,event):
+        dlg = Verbal1(parent = self) 
+        dlg.ShowModal()
+        if dlg.name:
+            self.lbl1=("Entry Title: "+dlg.name)
+            self.lbl2=("Tag 2: "+dlg.tag2)
+            self.lbl3=("Tag 3: "+dlg.tag3)
+            self.lbl4=("Tag 4: "+dlg.tag4)
+            self.lbl5=("Tag 5: "+dlg.tag5)
+        else:
+            print("No Input found\n")
+            dlg.Destroy()
+        self.addPage(self)
+class TabPanel(wx.Panel):
+    #----------------------------------------------------------------------
+    def __init__(self, parent):
+        """"""
+        wx.Panel.__init__(self, parent=parent)
+
+        self.SetBackgroundColour((0xdd,0xee,0x99))
+
+        self.st=wx.StaticText(self, label="Entry 1")
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(self.st, 0, wx.ALIGN_CENTER|wx.ALL, 10)
+        self.SetSizer(sizer)
+class PanelVerbal2(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal2.st=wx.StaticText(self, label="PanelVerbal2")
+        font = PanelVerbal2.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal2.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        self.btn = wx.Button(self, -1, "Change panel", (345, 100))
+
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal2.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal2.st.SetLabelText(txt)
+class PanelVerbal3(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal3.st=wx.StaticText(self, label="PanelVerbal3")
+        font = PanelVerbal3.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal3.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal3.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal3.st.SetLabelText(txt)
+class PanelVerbal4(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal4.st=wx.StaticText(self, label="PanelVerbal4")
+        font = PanelVerbal4.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal4.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal4.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal4.st.SetLabelText(txt)
+class PanelVerbal5(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal5.st=wx.StaticText(self, label="PanelVerbal5")
+        font = PanelVerbal5.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal5.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal5.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal5.st.SetLabelText(txt)
+class PanelVerbal6(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal6.st=wx.StaticText(self, label="PanelVerbal6")
+        font = PanelVerbal6.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal6.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal6.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal6.st.SetLabelText(txt)
+class PanelVerbal7(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal7.st=wx.StaticText(self, label="PanelVerbal7")
+        font = PanelVerbal7.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal7.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal7.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal7.st.SetLabelText(txt)
+class PanelVerbal8(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal8.st=wx.StaticText(self, label="PanelVerbal8")
+        font = PanelVerbal8.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal8.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal8.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal8.st.SetLabelText(txt)
+class PanelVerbal9(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal9.st=wx.StaticText(self, label="PanelVerbal9")
+        font = PanelVerbal9.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal9.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal9.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal9.st.SetLabelText(txt)
+class PanelVerbal10(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVerbal10.st=wx.StaticText(self, label="PanelVerbal10")
+        font = PanelVerbal10.st.GetFont()
+        font.PointSize += 5
+        PanelVerbal10.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVerbal10.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVerbal10.st.SetLabelText(txt)
+class PanelVisual1(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVisual1.st=wx.StaticText(self, label="PanelVisual1")
+        font = PanelVisual1.st.GetFont()
+        font.PointSize += 5
+        PanelVisual1.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVisual1.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual1.st.SetLabelText(txt)
+class PanelVisual2(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVisual2.st=wx.StaticText(self, label="PanelVisual2")
+        font = PanelVisual2.st.GetFont()
+        font.PointSize += 5
+        PanelVisual2.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVisual2.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual2.st.SetLabelText(txt)
+class PanelVisual3(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVisual3.st=wx.StaticText(self, label="PanelVisual3")
+        font = PanelVisual3.st.GetFont()
+        font.PointSize += 5
+        PanelVisual3.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVisual3.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual3.st.SetLabelText(txt)
+class PanelVisual4(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVisual4.st=wx.StaticText(self, label="PanelVisual4")
+        font = PanelVisual4.st.GetFont()
+        font.PointSize += 5
+        PanelVisual4.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVisual4.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual2.st.SetLabelText(txt)
+class PanelVisual5(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        PanelVisual5.st=wx.StaticText(self, label="PanelVisual5")
+        font = PanelVisual5.st.GetFont()
+        font.PointSize += 5
+        PanelVisual5.st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(PanelVisual5.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual5.st.SetLabelText(txt)
+class PanelVisual6(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual6")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual6.st.SetLabelText(txt)
+class PanelVisual7(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual7")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual7.st.SetLabelText(txt)
+class PanelVisual8(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual8")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual8.st.SetLabelText(txt)
+class PanelVisual9(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual9")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual9.st.SetLabelText(txt)
+class PanelVisual10(wx.Panel):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+        st=wx.StaticText(self, label="PanelVisual10")
+        font = st.GetFont()
+        font.PointSize += 5
+        st.SetFont(font)
+
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        Sizer = wx.BoxSizer(wx.VERTICAL)
+        Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        
+        self.SetSizerAndFit(Sizer)
+    def ChangeTitle(self,txt,event=None):
+        PanelVisual10.st.SetLabelText(txt)
+class MyForm(wx.Frame):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+
+        self.panel_one = PanelOne(self)
+        self.panel_two = PanelTwo(self)
+        self.panel_three = PanelThree(self)
+        self.panel_four = PanelFavorites(self)
+        self.panel_five = PanelDiary(self)
+        self.panel_six = PanelSort(self)
+        self.panel_vi_one = PanelVisual1(self)
+        self.panel_vi_two = PanelVisual2(self)
+        self.panel_vi_three = PanelVisual3(self)
+        self.panel_vi_four = PanelVisual4(self)
+        self.panel_vi_five = PanelVisual5(self)
+        self.panel_vi_six = PanelVisual6(self)
+        self.panel_vi_seven = PanelVisual7(self)
+        self.panel_vi_eight = PanelVisual8(self)
+        self.panel_vi_nine = PanelVisual9(self)
+        self.panel_vi_ten = PanelVisual10(self)
+        self.panel_ve_one = PanelVerbal1(self)
+        self.panel_ve_two = PanelVerbal2(self)
+        self.panel_ve_three = PanelVerbal3(self)
+        self.panel_ve_four = PanelVerbal4(self)
+        self.panel_ve_five = PanelVerbal5(self)
+        self.panel_ve_six = PanelVerbal6(self)
+        self.panel_ve_seven = PanelVerbal7(self)
+        self.panel_ve_eight = PanelVerbal8(self)
+        self.panel_ve_nine = PanelVerbal9(self)
+        self.panel_ve_ten = PanelVerbal10(self)
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+
+        self.panel_four.btn.Bind(wx.EVT_BUTTON, self.Home)
+        self.panel_five.btn.Bind(wx.EVT_BUTTON, self.Home)
+        self.panel_six.btn.Bind(wx.EVT_BUTTON, self.Home)
+
+        self.panel_three.newMedium1.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium2.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium3.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium4.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium5.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium6.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium7.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium8.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium9.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_three.newMedium10.Bind(wx.EVT_BUTTON, self.GetMediumResponseVisual)
+        self.panel_two.newMedium1.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium2.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium3.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium4.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium5.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium6.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium7.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium8.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium9.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+        self.panel_two.newMedium10.Bind(wx.EVT_BUTTON, self.GetMediumResponseVerbal)
+
+        self.sizer = wx.BoxSizer(wx.VERTICAL)
+        self.sizer.Add(self.panel_one, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_two, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_three, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_four, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_five, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_six, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_one, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_two, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_three, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_four, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_five, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_six, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_seven, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_eight, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_nine, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_ve_ten, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_one, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_two, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_three, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_four, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_five, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_six, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_seven, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_eight, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_nine, 1, wx.EXPAND)
+        self.sizer.Add(self.panel_vi_ten, 1, wx.EXPAND)
+        self.SetSizer(self.sizer)
+
+        menubar = wx.MenuBar()
+        fileMenu = wx.Menu()
+        mediumMenu = wx.Menu()
+        panelsMenu = wx.Menu()
+        switch_panels_menu_home = mediumMenu.Append(wx.ID_ANY, 
+                                                  "Home Screen", 
+                                                  "Some text")
+        switch_panels_menu_verbal = mediumMenu.Append(wx.ID_ANY, 
+                                                  "Verbal Mediums", 
+                                                  "Some text")
+        switch_panels_menu_visual = mediumMenu.Append(wx.ID_ANY, 
+                                                  "Visual Mediums", 
+                                                  "Some text")
+        switch_panels_panels_favorites = panelsMenu.Append(wx.ID_ANY, 
+                                                  "Favorites", 
+                                                  "Some text")
+        switch_panels_panels_diary = panelsMenu.Append(wx.ID_ANY, 
+                                                  "Diary", 
+                                                  "Some text")
+        switch_panels_panels_sort = panelsMenu.Append(wx.ID_ANY, 
+                                                  "Sort", 
+                                                  "Some text")
+        self.Bind(wx.EVT_MENU, self.Home, 
+                  switch_panels_menu_home)
+        self.Bind(wx.EVT_MENU, self.Verbal, 
+                  switch_panels_menu_verbal)
+        self.Bind(wx.EVT_MENU, self.Visual, 
+                  switch_panels_menu_visual)
+        self.Bind(wx.EVT_MENU, self.Favorites, 
+                  switch_panels_panels_favorites)
+        self.Bind(wx.EVT_MENU, self.Diary, 
+                  switch_panels_panels_diary)
+        self.Bind(wx.EVT_MENU, self.Sort, 
+                  switch_panels_panels_sort)
+        menubar.Append(fileMenu, '&File')
+        menubar.Append(mediumMenu, '&Medium')
+        menubar.Append(panelsMenu, '&Panels')
+        self.SetMenuBar(menubar)
+
+    #----------------------------------------------------------------------
+    def Home(self, event):
+        self.panel_one.Show()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.Layout()
+    def Verbal(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Show()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.Layout()
+    def Visual(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Show()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.Layout()
+    def Favorites(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Show()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.Layout()
+    def Diary(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Show()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.Layout()
+    def Sort(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Show()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.Layout()
+    def HideVerbalVisual(self,event):
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+    def GetMediumResponseVisual(self, event=None):
+        dlg = GetData1(parent = self)  
+        dlg.ShowModal
+        print(dlg.ShowModal())
+        self.panel_three.txt=(dlg.result_name)
+        print(self.panel_three.txt)
+        if (dlg.result_name): 
+            self.MediumButtonSetupVisual()
+        dlg.Destroy()
+    def GetMediumResponseVerbal(self, event=None):
+        dlg = GetData1(parent = self)  
+        dlg.ShowModal
+        print(dlg.ShowModal())
+        self.panel_two.txt=(dlg.result_name)
+        print(self.panel_two.txt)
+        if (dlg.result_name): 
+            self.MediumButtonSetupVerbal()
+        dlg.Destroy()
+    def MediumButtonSetupVisual(self,event=None):
+        #make reset button functionality
+        self.panel_three.buttonArr = [self.panel_three.newMedium1, self.panel_three.newMedium2, self.panel_three.newMedium3, self.panel_three.newMedium4, self.panel_three.newMedium5,self.panel_three.newMedium6, self.panel_three.newMedium7, self.panel_three.newMedium8,self.panel_three.newMedium9,self.panel_three.newMedium10]        
+        self.panel_three.buttonArr[self.panel_three.counter].SetLabelText(self.panel_three.txt)
+        MyForm.MediumButtonBindingVisual(self,self.panel_three.buttonArr[self.panel_three.counter])
+        if PanelThree.counter<9 and PanelThree.counter>-1:
+            PanelThree.counter+=1
+        if PanelThree.counter==9:
+            PanelThree.counter=-1
+    def MediumButtonSetupVerbal(self,event=None):
+        #make reset button functionality
+        self.panel_two.buttonArr = [self.panel_two.newMedium1, self.panel_two.newMedium2, self.panel_two.newMedium3, self.panel_two.newMedium4, self.panel_two.newMedium5,self.panel_two.newMedium6, self.panel_two.newMedium7, self.panel_two.newMedium8,self.panel_two.newMedium9,self.panel_two.newMedium10]        
+        self.panel_two.buttonArr[self.panel_two.counter].SetLabelText(self.panel_two.txt)
+        MyForm.MediumButtonBindingVerbal(self,self.panel_two.buttonArr[self.panel_two.counter])
+        if PanelTwo.counter<9 and PanelTwo.counter>-1:
+            PanelTwo.counter+=1
+        if PanelTwo.counter==9:
+            PanelTwo.counter=-1
+    def MediumButtonBindingVerbal(self,btn,event=None):
+        num=self.panel_three.counter+1
+        if num==1:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal1)
+            PanelVerbal1.ChangeTitle(self,self.panel_two.txt)
+        elif num==2:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal2)
+            PanelVerbal2.ChangeTitle(self,self.panel_two.txt)
+        elif num==3:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal3)
+            PanelVerbal3.ChangeTitle(self,self.panel_two.txt)
+        elif num==4:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal4)
+            PanelVerbal4.ChangeTitle(self,self.panel_two.txt)
+        elif num==5:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal5)
+            PanelVerbal6.ChangeTitle(self,self.panel_two.txt)
+        elif num==6:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal6)
+            PanelVerbal6.ChangeTitle(self,self.panel_two.txt)
+        elif num==7:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal7)
+            PanelVerbal7.ChangeTitle(self,self.panel_two.txt)
+        elif num==8:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal8)
+            PanelVerbal8.ChangeTitle(self,self.panel_two.txt)
+        elif num==9:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal9)
+            PanelVerbal9.ChangeTitle(self,self.panel_two.txt)
+        elif num==10:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVerbal10)
+            PanelVerbal10.ChangeTitle(self,self.panel_two.txt)
+    def MediumButtonBindingVisual(self,btn,event=None):
+        num=self.panel_three.counter+1
+        if num==1:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual1)
+            PanelVisual1.ChangeTitle(self,self.panel_three.txt)
+        elif num==2:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual2)
+            PanelVisual2.ChangeTitle(self,self.panel_three.txt)
+        elif num==3:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual3)
+            PanelVisual3.ChangeTitle(self,self.panel_three.txt)
+        elif num==4:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual4)
+            PanelVisual4.ChangeTitle(self,self.panel_three.txt)
+        elif num==5:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual5)
+            PanelVisual6.ChangeTitle(self,self.panel_three.txt)
+        elif num==6:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual6)
+            PanelVisual6.ChangeTitle(self,self.panel_three.txt)
+        elif num==7:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual7)
+            PanelVisual7.ChangeTitle(self,self.panel_three.txt)
+        elif num==8:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual8)
+            PanelVisual8.ChangeTitle(self,self.panel_three.txt)
+        elif num==9:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual9)
+            PanelVisual9.ChangeTitle(self,self.panel_three.txt)
+        elif num==10:
+            btn.Bind(wx.EVT_BUTTON, self.MediumVisual10)
+            PanelVisual10.ChangeTitle(self,self.panel_three.txt)
+    def MediumVerbal1(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_one.Show()
+        self.Layout()
+    def MediumVerbal2(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_two.Show()
+        self.Layout()
+    def MediumVerbal3(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_three.Show()
+        self.Layout()
+    def MediumVerbal4(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_four.Show()
+        self.Layout()
+    def MediumVerbal5(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_five.Show()
+        self.Layout()
+    def MediumVerbal6(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_six.Show()
+        self.Layout()
+    def MediumVerbal7(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_seven.Show()
+        self.Layout()
+    def MediumVerbal8(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_eight.Show()
+        self.Layout()
+    def MediumVerbal9(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_ve_nine.Show()
+        self.Layout()
+    def MediumVerbal10(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_ve_ten.Show()
+        self.Layout()
+    def MediumVisual1(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_one.Show()
+        self.Layout()
+    def MediumVisual2(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_two.Show()
+        self.Layout()
+    def MediumVisual3(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_three.Show()
+        self.Layout()
+    def MediumVisual4(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_four.Show()
+        self.Layout()
+    def MediumVisual5(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_five.Show()
+        self.Layout()
+    def MediumVisual6(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_six.Show()
+        self.Layout()
+    def MediumVisual7(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_seven.Show()
+        self.Layout()
+    def MediumVisual8(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_eight.Show()
+        self.Layout()
+    def MediumVisual9(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Hide()
+        self.panel_vi_nine.Show()
+        self.Layout()
+    def MediumVisual10(self, event):
+        self.panel_one.Hide()
+        self.panel_two.Hide()
+        self.panel_three.Hide()
+        self.panel_four.Hide()
+        self.panel_five.Hide()
+        self.panel_six.Hide()
+        self.panel_ve_one.Hide()
+        self.panel_ve_two.Hide()
+        self.panel_ve_three.Hide()
+        self.panel_ve_four.Hide()
+        self.panel_ve_five.Hide()
+        self.panel_ve_six.Hide()
+        self.panel_ve_seven.Hide()
+        self.panel_ve_eight.Hide()
+        self.panel_ve_nine.Hide()
+        self.panel_ve_ten.Hide()
+        self.panel_vi_one.Hide()
+        self.panel_vi_two.Hide()
+        self.panel_vi_three.Hide()
+        self.panel_vi_four.Hide()
+        self.panel_vi_five.Hide()
+        self.panel_vi_six.Hide()
+        self.panel_vi_seven.Hide()
+        self.panel_vi_eight.Hide()
+        self.panel_vi_nine.Hide()
+        self.panel_vi_ten.Show()
+        self.Layout()
+# Run the program
+if __name__ == "__main__":
+    app = wx.App(False)
+    frame = MyForm(None, title="Media Database")
+    wx.Window.SetInitialSize(frame, size=(1300,800))
+    frame.Show()
+    app.MainLoop()
