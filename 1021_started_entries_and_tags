@@ -397,7 +397,6 @@ class PanelVerbal2(wx.Panel):
         PanelVerbal2.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
-        self.btn = wx.Button(self, -1, "Change panel", (345, 100))
 
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal2.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
@@ -419,7 +418,6 @@ class PanelVerbal3(wx.Panel):
         PanelVerbal3.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
-        self.btn = wx.Button(self, -1, "Change panel", (345, 100))
 
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal3.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
@@ -441,7 +439,6 @@ class PanelVerbal4(wx.Panel):
         PanelVerbal4.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
-        self.btn = wx.Button(self, -1, "Change panel", (345, 100))
 
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal4.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
@@ -463,7 +460,6 @@ class PanelVerbal5(wx.Panel):
         PanelVerbal5.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
-        self.btn = wx.Button(self, -1, "Change panel", (345, 100))
 
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal5.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
@@ -485,7 +481,6 @@ class PanelVerbal6(wx.Panel):
         PanelVerbal6.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
-        self.btn = wx.Button(self, -1, "Change panel", (345, 100))
 
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal6.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
@@ -507,7 +502,6 @@ class PanelVerbal7(wx.Panel):
         PanelVerbal7.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
-        self.btn = wx.Button(self, -1, "Change panel", (345, 100))
 
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal7.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
@@ -523,10 +517,16 @@ class PanelVerbal8(wx.Panel):
         font = PanelVerbal8.st.GetFont()
         font.PointSize += 5
         PanelVerbal8.st.SetFont(font)
+        PanelVerbal8.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVerbal8.st2.GetFont()
+        font.PointSize += 5
+        PanelVerbal8.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal8.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVerbal8.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -538,10 +538,16 @@ class PanelVerbal9(wx.Panel):
         font = PanelVerbal9.st.GetFont()
         font.PointSize += 5
         PanelVerbal9.st.SetFont(font)
+        PanelVerbal9.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVerbal9.st2.GetFont()
+        font.PointSize += 5
+        PanelVerbal9.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal9.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVerbal9.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -553,10 +559,16 @@ class PanelVerbal10(wx.Panel):
         font = PanelVerbal10.st.GetFont()
         font.PointSize += 5
         PanelVerbal10.st.SetFont(font)
+        PanelVerbal10.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVerbal10.st2.GetFont()
+        font.PointSize += 5
+        PanelVerbal10.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVerbal10.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVerbal10.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -568,10 +580,16 @@ class PanelVisual1(wx.Panel):
         font = PanelVisual1.st.GetFont()
         font.PointSize += 5
         PanelVisual1.st.SetFont(font)
+        PanelVisual1.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual1.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual1.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVisual1.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual1.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -583,10 +601,16 @@ class PanelVisual2(wx.Panel):
         font = PanelVisual2.st.GetFont()
         font.PointSize += 5
         PanelVisual2.st.SetFont(font)
+        PanelVisual2.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual2.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual2.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVisual2.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual2.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -598,10 +622,16 @@ class PanelVisual3(wx.Panel):
         font = PanelVisual3.st.GetFont()
         font.PointSize += 5
         PanelVisual3.st.SetFont(font)
+        PanelVisual3.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual3.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual3.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVisual3.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual3.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -613,14 +643,20 @@ class PanelVisual4(wx.Panel):
         font = PanelVisual4.st.GetFont()
         font.PointSize += 5
         PanelVisual4.st.SetFont(font)
+        PanelVisual4.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual4.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual4.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVisual4.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual4.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
-        PanelVisual2.st.SetLabelText(txt)
+        PanelVisual4.st.SetLabelText(txt)
 class PanelVisual5(wx.Panel):
     def __init__(self, *args, **kwargs):
         wx.Frame.__init__(self, *args, **kwargs)
@@ -628,10 +664,16 @@ class PanelVisual5(wx.Panel):
         font = PanelVisual5.st.GetFont()
         font.PointSize += 5
         PanelVisual5.st.SetFont(font)
+        PanelVisual5.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual5.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual5.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(PanelVisual5.st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual5.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -643,10 +685,16 @@ class PanelVisual6(wx.Panel):
         font = st.GetFont()
         font.PointSize += 5
         st.SetFont(font)
+        PanelVisual6.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual6.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual6.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual6.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -658,10 +706,16 @@ class PanelVisual7(wx.Panel):
         font = st.GetFont()
         font.PointSize += 5
         st.SetFont(font)
+        PanelVisual7.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual7.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual7.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual7.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -673,10 +727,16 @@ class PanelVisual8(wx.Panel):
         font = st.GetFont()
         font.PointSize += 5
         st.SetFont(font)
+        PanelVisual8.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual8.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual8.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual8.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -688,10 +748,16 @@ class PanelVisual9(wx.Panel):
         font = st.GetFont()
         font.PointSize += 5
         st.SetFont(font)
+        PanelVisual9.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual9.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual9.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual9.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -703,10 +769,16 @@ class PanelVisual10(wx.Panel):
         font = st.GetFont()
         font.PointSize += 5
         st.SetFont(font)
+        PanelVisual10.st2=wx.StaticText(self, label="Medium Description")
+        font = PanelVisual10.st2.GetFont()
+        font.PointSize += 5
+        PanelVisual10.st2.SetFont(font)
 
         self.SetBackgroundColour((0xbb,0xdd,0xbb))
+
         Sizer = wx.BoxSizer(wx.VERTICAL)
         Sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        Sizer.Add(PanelVisual10.st2, 0, wx.ALIGN_CENTER|wx.ALL, 15)
         
         self.SetSizerAndFit(Sizer)
     def ChangeTitle(self,txt,event=None):
@@ -1080,7 +1152,7 @@ class MyForm(wx.Frame):
         if PanelThree.counter<9 and PanelThree.counter>-1:
             PanelThree.counter+=1
         if PanelThree.counter==9:
-            PanelThree.counter=-1
+            PanelThree.counter=--1
     def MediumButtonSetupVerbal(self,event=None):
         #make reset button functionality
         self.panel_two.buttonArr = [self.panel_two.newMedium1, self.panel_two.newMedium2, self.panel_two.newMedium3, self.panel_two.newMedium4, self.panel_two.newMedium5,self.panel_two.newMedium6, self.panel_two.newMedium7, self.panel_two.newMedium8,self.panel_two.newMedium9,self.panel_two.newMedium10]        
