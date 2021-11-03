@@ -1,0 +1,183 @@
+import wx
+
+class PanelOne(wx.Panel):
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent=parent)
+        st=wx.StaticText(self, label="Home Screen")
+        self.SetBackgroundColour((0xbb,0xdd,0xbb))
+        self.entry = wx.Button(self, label="Add entry")
+        self.entry.Bind(wx.EVT_BUTTON, self.OnButton)
+
+        self.tab_num = 1
+
+        self.notebook = wx.Notebook(self)
+        tabOne = FirstTabPanel(self.notebook)
+        self.notebook.AddPage(tabOne, "Tab 0")
+        
+        self.label = wx.Button(self, label="Edit Labels")
+        self.label.Bind(wx.EVT_BUTTON, self.LabelSet)
+
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(st, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        sizer.Add(self.entry, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+        sizer.Add(self.notebook, 0, wx.ALL|wx.EXPAND, 15)
+        sizer.Add(self.label, 0, wx.ALIGN_CENTER|wx.ALL, 15)
+
+        self.SetSizer(sizer)
+        self.Layout()
+
+        self.Show()
+    #----------------------------------------------------------------------
+    def addPage(self, event):
+        new_tab = TabPanel(self.notebook)
+        self.notebook.AddPage(new_tab, "Tab %s" % self.tab_num)
+        self.tab_num += 1
+    def ChangeTitle(self,txt,event=None):
+        PanelOne.st.SetLabelText(txt)
+    def OnButton(self,event):
+        dlg = Labeller(parent = self) 
+        dlg.ShowModal()
+        if dlg.name:
+            Labels.lbl1=("Entry Title: "+dlg.name)
+            Labels.lbl2=(Labels.lb2+": "+dlg.tag2)
+            Labels.lbl3=(Labels.lb3+": "+dlg.tag3)
+            Labels.lbl4=(Labels.lb4+": "+dlg.tag4)
+            Labels.lbl5=(Labels.lb5+": "+dlg.tag5)
+            self.addPage(self)
+        else:
+            print("No Input found\n")
+            dlg.Destroy()
+    def LabelSet(self,event):
+        dlg = LabelSetter(parent = self) 
+        dlg.ShowModal()
+        if dlg.tag2:
+            Labels.lb2=(dlg.tag2)
+            Labels.lb3=(dlg.tag3)
+            Labels.lb4=(dlg.tag4)
+            Labels.lb5=(dlg.tag5)
+        else:
+            print("No Input found\n")
+            dlg.Destroy()
+class FirstTabPanel(wx.Panel):
+    #----------------------------------------------------------------------
+    def __init__(self, parent):
+        """"""
+        wx.Panel.__init__(self, parent=parent)
+
+        self.SetBackgroundColour((0xdd,0xee,0x99))
+
+        self.st=wx.StaticText(self, label="Entries will be found in this notebook\n\n\n\n\n\n\n\n\n\n\n")
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(self.st, 0, wx.ALIGN_CENTER|wx.ALL, 10)
+        self.SetSizer(sizer)
+class TabPanel(wx.Panel):
+    #----------------------------------------------------------------------
+    def __init__(self, parent):
+        """"""
+        wx.Panel.__init__(self, parent=parent)
+
+        self.SetBackgroundColour((0xdd,0xee,0x99))
+
+        st1=wx.StaticText(self, label=Labels.lbl1)
+        st2=wx.StaticText(self, label=Labels.lbl2)
+        st3=wx.StaticText(self, label=Labels.lbl3)
+        st4=wx.StaticText(self, label=Labels.lbl4)
+        st5=wx.StaticText(self, label=Labels.lbl5)
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(st1, 0, wx.ALIGN_CENTER|wx.ALL, 10)
+        sizer.Add(st2, 0, wx.ALIGN_CENTER|wx.ALL, 10)
+        sizer.Add(st3, 0, wx.ALIGN_CENTER|wx.ALL, 10)
+        sizer.Add(st4, 0, wx.ALIGN_CENTER|wx.ALL, 10)
+        sizer.Add(st5, 0, wx.ALIGN_CENTER|wx.ALL, 10)
+        self.SetSizer(sizer)
+        self.Layout()
+
+        self.SetSizerAndFit(sizer)
+
+class Labeller(wx.Dialog):
+    def __init__(self, parent):
+        wx.Dialog.__init__(self, parent, wx.ID_ANY, "Entry Inputter", size= (800,300))
+        self.panel = wx.Panel(self,wx.ID_ANY)
+        self.SetBackgroundColour((0xff,0xcc,0x88))
+
+        self.lblname = wx.StaticText(self.panel, label="Name of entry:", pos=(20,20))
+        self.name = wx.TextCtrl(self.panel, value="", pos=(120,18), size=(500,-1))
+        self.lbltag2 = wx.StaticText(self.panel, label=Labels.lb2+":", pos=(20,60))
+        self.tag2 = wx.TextCtrl(self.panel, value="", pos=(120,58), size=(500,-1))
+        self.lbltag3 = wx.StaticText(self.panel, label=Labels.lb3+":", pos=(20,100))
+        self.tag3 = wx.TextCtrl(self.panel, value="", pos=(120,98), size=(500,-1))
+        self.lbltag4 = wx.StaticText(self.panel, label=Labels.lb4+":", pos=(20,140))
+        self.tag4 = wx.TextCtrl(self.panel, value="", pos=(120,138), size=(500,-1))
+        self.lbltag5 = wx.StaticText(self.panel, label=Labels.lb5+":", pos=(20,180))
+        self.tag5 = wx.TextCtrl(self.panel, value="", pos=(120,178), size=(500,-1))
+        self.saveButton =wx.Button(self.panel, label="Save", pos=(110,210))
+        self.closeButton =wx.Button(self.panel, label="Cancel", pos=(210,210))
+        self.saveButton.Bind(wx.EVT_BUTTON, self.SaveConnString)
+        self.closeButton.Bind(wx.EVT_BUTTON, self.OnQuit)
+        self.Bind(wx.EVT_CLOSE, self.OnQuit)
+        self.Show()
+
+    def OnQuit(self, event):
+        self.name = None
+        self.Destroy()
+
+    def SaveConnString(self, event):
+        self.name = self.name.GetValue()
+        self.tag2 = self.tag2.GetValue()
+        self.tag3 = self.tag3.GetValue()
+        self.tag4 = self.tag4.GetValue()
+        self.tag5 = self.tag5.GetValue()
+        self.Destroy()
+class LabelSetter(wx.Dialog):
+    def __init__(self, parent):
+        wx.Dialog.__init__(self, parent, wx.ID_ANY, "Entry Inputter", size= (800,300))
+        self.panel = wx.Panel(self,wx.ID_ANY)
+        self.SetBackgroundColour((0xff,0xcc,0x88))
+
+        self.lbltag2 = wx.StaticText(self.panel, label="Tag 2:", pos=(20,20))
+        self.tag2 = wx.TextCtrl(self.panel, value="", pos=(120,18), size=(500,-1))
+        self.lbltag3 = wx.StaticText(self.panel, label="Tag 3:", pos=(20,60))
+        self.tag3 = wx.TextCtrl(self.panel, value="", pos=(120,58), size=(500,-1))
+        self.lbltag4 = wx.StaticText(self.panel, label="Tag 4:", pos=(20,100))
+        self.tag4 = wx.TextCtrl(self.panel, value="", pos=(120,98), size=(500,-1))
+        self.lbltag5 = wx.StaticText(self.panel, label="Tag 5:", pos=(20,140))
+        self.tag5 = wx.TextCtrl(self.panel, value="", pos=(120,138), size=(500,-1))
+        self.saveButton =wx.Button(self.panel, label="Save", pos=(110,210))
+        self.closeButton =wx.Button(self.panel, label="Cancel", pos=(210,210))
+        self.saveButton.Bind(wx.EVT_BUTTON, self.SaveConnString)
+        self.closeButton.Bind(wx.EVT_BUTTON, self.OnQuit)
+        self.Bind(wx.EVT_CLOSE, self.OnQuit)
+        self.Show()
+
+    def OnQuit(self, event):
+        self.name = None
+        self.Destroy()
+
+    def SaveConnString(self, event):
+        self.tag2 = self.tag2.GetValue()
+        self.tag3 = self.tag3.GetValue()
+        self.tag4 = self.tag4.GetValue()
+        self.tag5 = self.tag5.GetValue()
+        self.Destroy()
+class Labels():
+    lbl2=""
+    lbl3=""
+    lbl4=""
+    lbl5=""
+    lb2="Tag 2"
+    lb3="Tag 3"
+    lb4="Tag 4"
+    lb5="Tag 5"
+
+class MyForm(wx.Frame):
+    def __init__(self, *args, **kwargs):
+        wx.Frame.__init__(self, *args, **kwargs)
+
+        self.panel_one = PanelOne(self)
+
+if __name__ == "__main__":
+    app = wx.App(False)
+    frame = MyForm(None, title="Media Database")
+    wx.Window.SetInitialSize(frame, size=(1300,800))
+    frame.Show()
+    app.MainLoop()        
