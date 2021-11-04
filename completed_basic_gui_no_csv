@@ -159,18 +159,18 @@ class LabelSetter(wx.Dialog):
         self.Destroy()
 
     def SaveConnString(self, event):
-        entry = {tag2: self.tag2.GetValue(), self.tag3: self.tag3.GetValue(),self.tag4: self.tag4.GetValue(), self.tag5: self.tag5.GetValue()  }
+        entry = {self.tag2: self.tag2.GetValue(), self.tag3: self.tag3.GetValue(),self.tag4: self.tag4.GetValue(), self.tag5: self.tag5.GetValue()  }
 # 2. Update json object
-        data.append(entry)
+        
         # 3. Write json file
-        with open(filename, "w") as file:
+       
 
 
-                self.tag2 = self.tag2.GetValue()
-                self.tag3 = self.tag3.GetValue()
-                self.tag4 = self.tag4.GetValue()
-                self.tag5 = self.tag5.GetValue()
-                self.Destroy()
+        self.tag2 = self.tag2.GetValue()
+        self.tag3 = self.tag3.GetValue()
+        self.tag4 = self.tag4.GetValue()
+        self.tag5 = self.tag5.GetValue()
+        self.Destroy()
 
 class Labels():
     lbl2=""
