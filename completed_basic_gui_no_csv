@@ -1,6 +1,8 @@
 import wx
+import json
 
 class PanelOne(wx.Panel):
+    
     def __init__(self, parent):
         wx.Panel.__init__(self, parent=parent)
         st=wx.StaticText(self, label="Home Screen")
@@ -129,6 +131,7 @@ class Labeller(wx.Dialog):
         self.tag5 = self.tag5.GetValue()
         self.Destroy()
 class LabelSetter(wx.Dialog):
+    filename = [{"": 0}]
     def __init__(self, parent):
         wx.Dialog.__init__(self, parent, wx.ID_ANY, "Entry Inputter", size= (800,300))
         self.panel = wx.Panel(self,wx.ID_ANY)
@@ -148,17 +151,27 @@ class LabelSetter(wx.Dialog):
         self.closeButton.Bind(wx.EVT_BUTTON, self.OnQuit)
         self.Bind(wx.EVT_CLOSE, self.OnQuit)
         self.Show()
-
+  
+        
+    
     def OnQuit(self, event):
         self.name = None
         self.Destroy()
 
     def SaveConnString(self, event):
-        self.tag2 = self.tag2.GetValue()
-        self.tag3 = self.tag3.GetValue()
-        self.tag4 = self.tag4.GetValue()
-        self.tag5 = self.tag5.GetValue()
-        self.Destroy()
+        entry = {tag2: self.tag2.GetValue(), self.tag3: self.tag3.GetValue(),self.tag4: self.tag4.GetValue(), self.tag5: self.tag5.GetValue()  }
+# 2. Update json object
+        data.append(entry)
+        # 3. Write json file
+        with open(filename, "w") as file:
+
+
+                self.tag2 = self.tag2.GetValue()
+                self.tag3 = self.tag3.GetValue()
+                self.tag4 = self.tag4.GetValue()
+                self.tag5 = self.tag5.GetValue()
+                self.Destroy()
+
 class Labels():
     lbl2=""
     lbl3=""
